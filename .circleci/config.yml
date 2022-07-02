@@ -39,7 +39,7 @@ jobs:
     steps:
       - run: echo "hello world is failing"
       - when:
-        - on_fail
+          - on_fail
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -49,3 +49,4 @@ workflows:
       - cat-hello:
         requires:
           - hello-to-txt
+      - if-failed
